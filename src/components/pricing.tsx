@@ -1,6 +1,7 @@
 "use client";
 
 import { Check, ArrowRight } from "lucide-react";
+import { useForm, ValidationError } from '@formspree/react';
 
 const features = [
     "Early access to the full AI agent pipeline",
@@ -10,6 +11,8 @@ const features = [
 ];
 
 export function Pricing() {
+    const [state, handleSubmit] = useForm("mvzwgbkg");
+
     return (
         <section id="pricing" className="py-24 relative overflow-hidden bg-background">
             <div className="container mx-auto px-4 md:px-6 relative z-10 flex justify-center">
@@ -33,21 +36,39 @@ export function Pricing() {
                         ))}
                     </ul>
 
-                    <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
-                        <input
-                            type="email"
-                            placeholder="Enter your email..."
-                            required
-                            className="w-full px-6 py-4 bg-background border border-black/5 rounded-full text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                        />
-                        <button
-                            type="submit"
-                            className="w-full group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-full transition-all hover:bg-primary/95 shadow-sm hover:shadow-soft flex-shrink-0"
-                        >
-                            <span>Request Access</span>
-                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </button>
-                    </form>
+                    {state.succeeded ? (
+                        <div className="flex flex-col items-center justify-center p-8 bg-green-50 rounded-2xl border border-green-100 mb-8">
+                            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                                <Check className="w-6 h-6 text-green-600" />
+                            </div>
+                            <h4 className="text-xl font-bold text-green-900 mb-2 font-serif">You're on the list!</h4>
+                            <p className="text-green-700 text-center text-sm">Thanks for joining our private beta waitlist. We'll be in touch soon.</p>
+                        </div>
+                    ) : (
+                        <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
+                            <input
+                                id="email"
+                                type="email"
+                                name="email"
+                                placeholder="Enter your email..."
+                                required
+                                className="w-full px-6 py-4 bg-background border border-black/5 rounded-full text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                            />
+                            <ValidationError
+                                prefix="Email"
+                                field="email"
+                                errors={state.errors}
+                            />
+                            <button
+                                type="submit"
+                                disabled={state.submitting}
+                                className="w-full group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-full transition-all hover:bg-primary/95 shadow-sm hover:shadow-soft flex-shrink-0 disabled:opacity-70 disabled:cursor-not-allowed"
+                            >
+                                <span>{state.submitting ? "Joining..." : "Join Waitlist"}</span>
+                                {!state.submitting && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+                            </button>
+                        </form>
+                    )}
                 </div>
             </div>
         </section>
