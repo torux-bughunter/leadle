@@ -64,12 +64,7 @@ export function HowItWorks() {
                                         <h4 className="text-2xl font-bold font-serif text-foreground mb-2">
                                             {step.agent}
                                         </h4>
-                                        <div className="h-32 mt-6 rounded-xl bg-accent-stone/20 overflow-hidden relative flex items-center justify-center border border-border/50">
-                                            {/* Abstract visual representation based on step */}
-                                            {i === 0 && <Search className="w-12 h-12 text-muted opacity-50" />}
-                                            {i === 1 && <MessageSquareText className="w-12 h-12 text-muted opacity-50" />}
-                                            {i === 2 && <PlayCircle className="w-12 h-12 text-muted opacity-50" />}
-                                        </div>
+
                                     </div>
                                 </div>
 

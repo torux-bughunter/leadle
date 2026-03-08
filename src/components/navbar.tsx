@@ -53,6 +53,7 @@ export function Navbar() {
 
                 <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
                     <a href="#how-it-works" className="text-muted hover:text-foreground transition-colors">How it Works</a>
+                    <a href="#pricing" className="text-muted hover:text-foreground transition-colors">Pricing</a>
                 </nav>
 
                 <div className="hidden md:flex items-center gap-4">
@@ -88,6 +89,13 @@ export function Navbar() {
                                 className="px-4 py-3 text-sm font-medium text-foreground hover:bg-accent-stone/50 rounded-xl transition-colors"
                             >
                                 How it Works
+                            </a>
+                            <a
+                                href="#pricing"
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="px-4 py-3 text-sm font-medium text-foreground hover:bg-accent-stone/50 rounded-xl transition-colors"
+                            >
+                                Pricing
                             </a>
                         </nav>
                         <div className="pt-2 border-t border-black/5">
