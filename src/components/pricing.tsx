@@ -47,10 +47,36 @@ export function Pricing() {
                     ) : (
                         <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
                             <input
+                                id="name"
+                                type="text"
+                                name="name"
+                                placeholder="Your Name"
+                                required
+                                className="w-full px-6 py-4 bg-background border border-black/5 rounded-full text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                            />
+                            <ValidationError
+                                prefix="Name"
+                                field="name"
+                                errors={state.errors}
+                            />
+                            <input
+                                id="company"
+                                type="text"
+                                name="company"
+                                placeholder="Company Name"
+                                required
+                                className="w-full px-6 py-4 bg-background border border-black/5 rounded-full text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                            />
+                            <ValidationError
+                                prefix="Company"
+                                field="company"
+                                errors={state.errors}
+                            />
+                            <input
                                 id="email"
                                 type="email"
                                 name="email"
-                                placeholder="Enter your email..."
+                                placeholder="Email Address"
                                 required
                                 className="w-full px-6 py-4 bg-background border border-black/5 rounded-full text-foreground placeholder-muted focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
                             />

@@ -26,7 +26,7 @@ export default function Home() {
           }
           subtitle="Stop burning leads. Our AI agents automate cold outreach, qualify responses, and reactivate dormant customers for HVAC, plumbing, and roofing businesses."
           ctaText="Join Waitlist"
-          ctaLink="#waitlist"
+          ctaLink="#pricing"
           mockupNode={<DashboardMockup />}
         />
         <HowItWorks />

@@ -57,7 +57,7 @@ export function Navbar() {
                 </nav>
 
                 <div className="hidden md:flex items-center gap-4">
-                    <a href="#waitlist" className="bg-primary text-primary-foreground text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-primary/90 transition-colors shadow-sm hover:shadow-soft">
+                    <a href="#pricing" className="bg-primary text-primary-foreground text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-primary/90 transition-colors shadow-sm hover:shadow-soft">
                         Join Waitlist
                     </a>
                 </div>
@@ -100,7 +100,7 @@ export function Navbar() {
                         </nav>
                         <div className="pt-2 border-t border-black/5">
                             <a
-                                href="#waitlist"
+                                href="#pricing"
                                 onClick={() => setMobileMenuOpen(false)}
                                 className="flex justify-center w-full bg-primary text-primary-foreground text-sm font-semibold px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors shadow-sm"
                             >
