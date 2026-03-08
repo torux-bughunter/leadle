@@ -89,7 +89,7 @@ export function DashboardMockup() {
                             <span className="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
                         </button>
                         <div className="w-8 h-8 rounded-full bg-accent-stone border border-border flex items-center justify-center font-medium text-sm">
-                            TS
+                            JD
                         </div>
                     </div>
                 </header>
@@ -109,7 +109,7 @@ export function DashboardMockup() {
                                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
                                     <div>
                                         <h2 className="text-xl md:text-2xl font-serif font-semibold text-foreground">
-                                            Good morning, Tarunesh
+                                            Good morning, John Doe
                                         </h2>
                                         <p className="text-sm md:text-base text-muted mt-1">Here's what your agents are up to today.</p>
                                     </div>
